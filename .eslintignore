@@ -1,0 +1,4 @@
+config/*
+**/serviceWorker.*
+**/*.d.ts
+**/*.test.*
