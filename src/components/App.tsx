@@ -7,14 +7,16 @@ import Loading from './Loading';
 import Routes from './Routes';
 
 import NotFound from '../pages/NotFound';
+import Header from './Header';
 
 const App = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
+        <Header />
         <Switch>
           {Routes.map((route) => (
-            <Route exact={route.exact} path={route.path} component={route.component} />
+            <Route key={route.name} exact={route.exact} path={route.path} component={route.component} />
           ))}
           <Route component={NotFound} />
         </Switch>
