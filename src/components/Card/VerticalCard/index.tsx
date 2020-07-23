@@ -1,34 +1,57 @@
 import React, { FC } from 'react';
-import { StyledVerticalCard } from './styled';
-import { getRandomThumnail } from '../../../utils';
-import { StyledThumnail } from '../HorizontalCard/styled';
+import {
+  StyledThumbnail,
+  StyledVerticalCard,
+  StyledDescriptionArea,
+  StyledLabel,
+  StyledTitle,
+  StyledHighLight,
+  StyledCrossOut,
+  StyledWrapHighLight,
+  StyledWrapStarsAndDescription,
+  StyledSubDescription,
+} from './styled';
+import { setCommasIfNumber } from '../../../utils';
+import Stars from '../../Stars';
 
 interface VerticalCardProps {
-  stars: boolean;
-  subDescription: boolean;
+  imgURL: string;
+  numberOfStars?: number;
+  cardLabel: string;
+  cardTitle: string;
+  highLight: string | number;
+  crossOut: string | number;
+  descriptionText?: string;
 }
 
-const VerticalCard: FC<VerticalCardProps> = ({ stars, subDescription }) => {
-  const thumbnail = getRandomThumnail();
-
-  return (
-    <StyledVerticalCard>
-      <StyledThumnail thumnail={thumbnail} />
-      <div>
-        <div>label</div>
-        <div>Title</div>
-        <div>
-          <span>Highlight</span>
-          <span>Cross out</span>
-        </div>
-        <div>
-          {/* 별: "\e938" */}
-          {stars && <i>Stars</i>}
-          {subDescription && <div>Description</div>}
-        </div>
-      </div>
-    </StyledVerticalCard>
-  );
-};
+const VerticalCard: FC<VerticalCardProps> = ({
+  imgURL,
+  numberOfStars,
+  cardLabel,
+  cardTitle,
+  highLight,
+  crossOut,
+  descriptionText,
+}) => (
+  <StyledVerticalCard>
+    <StyledThumbnail thumbnail={imgURL} />
+    <div>
+      <StyledDescriptionArea>
+        <StyledLabel>{cardLabel}</StyledLabel>
+        <StyledTitle>{cardTitle}</StyledTitle>
+        <StyledWrapHighLight>
+          <StyledHighLight>{setCommasIfNumber(highLight)}</StyledHighLight>
+          <StyledCrossOut>{setCommasIfNumber(crossOut)}</StyledCrossOut>
+        </StyledWrapHighLight>
+      </StyledDescriptionArea>
+      {numberOfStars || descriptionText ? (
+        <StyledWrapStarsAndDescription>
+          {numberOfStars ? <Stars number={numberOfStars} /> : null}
+          {descriptionText && <StyledSubDescription>{descriptionText}</StyledSubDescription>}
+        </StyledWrapStarsAndDescription>
+      ) : null}
+    </div>
+  </StyledVerticalCard>
+);
 
 export default VerticalCard;

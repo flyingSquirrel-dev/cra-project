@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { defaultCoral } from '../../baseStyled';
 
 export const StyledHeader = styled.nav`
   height: 100%;
   padding: 1em 0;
-  background: #e6514b;
+  background: ${defaultCoral};
   font-weight: bold;
   color: #fff;
 

@@ -1,5 +1,5 @@
-import { images } from '../misc';
+export const setCommasIfNumber = (x: string | number): string => {
+  if (typeof x === 'string') return x;
 
-export const getRandomThumnail = () => {
-  return images[Math.floor(Math.random() * 3)];
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
