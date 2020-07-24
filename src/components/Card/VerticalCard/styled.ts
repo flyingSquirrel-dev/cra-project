@@ -6,11 +6,14 @@ interface StyledThumbnailProps {
 }
 
 export const StyledVerticalCard = styled.li`
+  display: inline-block;
   width: 15%;
   margin: 0.6em 0 0 0.6em;
+  text-align: left;
+  vertical-align: top;
   border-radius: 0.3em;
 
-  @media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
     display: inline-flex;
     width: 50%;
     justify-content: flex-start;

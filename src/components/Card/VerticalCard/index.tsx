@@ -13,18 +13,9 @@ import {
 } from './styled';
 import { setCommasIfNumber } from '../../../utils';
 import Stars from '../../Stars';
+import { fakeAPIResponseProps } from '../../../interfaces';
 
-interface VerticalCardProps {
-  imgURL: string;
-  numberOfStars?: number;
-  cardLabel: string;
-  cardTitle: string;
-  highLight: string | number;
-  crossOut: string | number;
-  descriptionText?: string;
-}
-
-const VerticalCard: FC<VerticalCardProps> = ({
+const VerticalCard: FC<fakeAPIResponseProps> = ({
   imgURL,
   numberOfStars,
   cardLabel,

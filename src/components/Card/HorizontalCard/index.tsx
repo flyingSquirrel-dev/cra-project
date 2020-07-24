@@ -1,11 +1,34 @@
 import React, { FC } from 'react';
-import { StyledHorizontalCard } from './styled';
+import {
+  StyledHorizonCard,
+  StyledThumbnail,
+  StyledWrapThumbnail,
+  StyledContentArea,
+  StyledWrapStarsAndAuthor,
+  StyledTitle,
+  StyledDescription,
+  StyledAuthor,
+} from './styled';
+import { fakeAPIResponseProps } from '../../../interfaces';
+import Stars from '../../Stars';
 
-const HorizontalCard: FC = () => {
+const HorizontalCard: FC<fakeAPIResponseProps> = ({ imgURL, numberOfStars, cardTitle, descriptionText, author }) => {
   return (
-    <StyledHorizontalCard>
-      <div>HorizontalCard</div>
-    </StyledHorizontalCard>
+    <StyledHorizonCard>
+      <StyledWrapThumbnail>
+        <StyledThumbnail thumbnail={imgURL} />
+      </StyledWrapThumbnail>
+      <StyledContentArea>
+        <StyledTitle>{cardTitle}</StyledTitle>
+        <StyledDescription>{descriptionText}</StyledDescription>
+        {numberOfStars || descriptionText ? (
+          <StyledWrapStarsAndAuthor>
+            {numberOfStars ? <Stars number={numberOfStars} /> : null}
+            {author && <StyledAuthor>{author}</StyledAuthor>}
+          </StyledWrapStarsAndAuthor>
+        ) : null}
+      </StyledContentArea>
+    </StyledHorizonCard>
   );
 };
 
