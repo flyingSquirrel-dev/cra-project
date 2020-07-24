@@ -18,10 +18,8 @@ export const StyledWrapCustomTextArea = styled.div`
 export const StyledCustomTextArea = styled.div`
   position: relative;
   width: 100%;
-  height: 5em;
   textarea {
     width: 100%;
-    height: 100%;
     padding: 0.5em;
     resize: none;
   }
