@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-
-interface StyledThumbnailProps {
-  thumbnail: string;
-}
+import { StyledThumbnailProps } from '../../../interfaces';
 
 export const StyledHorizonCard = styled.li`
   position: relative;

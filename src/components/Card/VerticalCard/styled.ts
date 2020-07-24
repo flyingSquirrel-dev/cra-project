@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import { defaultCoral } from '../../../baseStyled';
-
-interface StyledThumbnailProps {
-  thumbnail: string;
-}
+import { StyledThumbnailProps } from '../../../interfaces';
 
 export const StyledVerticalCard = styled.li`
   display: inline-block;

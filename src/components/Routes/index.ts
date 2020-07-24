@@ -1,20 +1,15 @@
 import React, { lazy } from 'react';
 
+import { RoutesProps } from '../../interfaces';
+
 const Home = lazy(() => import('../../pages/Home'));
 const Menu1 = lazy(() => import('../../pages/Menu1'));
 const Menu2 = lazy(() => import('../../pages/Menu2'));
 
-interface Routes {
-  path: string;
-  component: React.FC;
-  name: string;
-  exact?: boolean;
-}
-
-const Routes: Routes[] = [
+const Routes: RoutesProps[] = [
   {
     path: '/',
-    name: 'Home',
+    name: 'HOME',
     component: Home,
     exact: true,
   },

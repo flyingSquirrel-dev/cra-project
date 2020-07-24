@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
 import { StyledStars, StyledWrapSars } from './styled';
-
-interface StarsProps {
-  number: number | undefined;
-}
+import { StarsProps } from '../../interfaces';
 
 const Stars: FC<StarsProps> = ({ number = 1 }) => {
   const starsArray = new Array(5).fill(true);

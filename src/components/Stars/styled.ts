@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-
-interface StyledStarsProps {
-  color: string;
-}
+import { StyledStarsProps } from '../../interfaces';
 
 export const StyledWrapSars = styled.div`
   display: flex;
