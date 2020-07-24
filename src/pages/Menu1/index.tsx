@@ -6,13 +6,14 @@ import { fakeAPIResponse } from '../../misc';
 import { CardTypes } from '../../enums';
 
 const Menu1: FC = () => (
-  <PageWrapMenu1>
+  <PageWrapMenu1 tabIndex={0}>
     {fakeAPIResponse.map((payload, index) => {
       if (payload.type.toUpperCase() === CardTypes.VERTICAL) {
         return (
           <VerticalCard
             key={`verticalCard-${index}`}
             type={payload.type}
+            url={payload.url}
             imgURL={payload.imgURL}
             numberOfStars={Math.floor(payload.numberOfStars)}
             cardLabel={payload.cardLabel}
@@ -27,6 +28,7 @@ const Menu1: FC = () => (
         <HorizontalCard
           key={`horizonCard-${index}`}
           type={payload.type}
+          url={payload.url}
           imgURL={payload.imgURL}
           numberOfStars={Math.floor(payload.numberOfStars)}
           cardTitle={payload.cardTitle}

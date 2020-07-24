@@ -21,7 +21,14 @@ export const StyledCustomTextArea = styled.div`
   textarea {
     width: 100%;
     padding: 0.5em;
+    border-radius: 0.3em;
     resize: none;
+    &:disabled {
+      color: #cfcfcf;
+    }
+    &:read-only {
+      outline: none;
+    }
   }
   span {
     position: absolute;
@@ -38,6 +45,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
   color: #fff;
   border: none;
   border-radius: 0.3em;
+  &:disabled {
+    color: #cfcfcf;
+  }
   &:focus {
     outline: none;
   }

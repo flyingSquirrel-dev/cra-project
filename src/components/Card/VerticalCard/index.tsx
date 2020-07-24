@@ -18,30 +18,29 @@ import { FakeAPIResponseProps } from '../../../interfaces';
 const VerticalCard: FC<FakeAPIResponseProps> = ({
   imgURL,
   numberOfStars,
+  url,
   cardLabel,
   cardTitle,
   highLight,
   crossOut,
   descriptionText,
 }) => (
-  <StyledVerticalCard>
-    <StyledThumbnail thumbnail={imgURL} />
-    <div>
-      <StyledDescriptionArea>
-        <StyledLabel>{cardLabel}</StyledLabel>
-        <StyledTitle>{cardTitle}</StyledTitle>
-        <StyledWrapHighLight>
-          <StyledHighLight>{setCommasIfNumber(highLight)}</StyledHighLight>
-          <StyledCrossOut>{setCommasIfNumber(crossOut)}</StyledCrossOut>
-        </StyledWrapHighLight>
-      </StyledDescriptionArea>
-      {numberOfStars || descriptionText ? (
-        <StyledWrapStarsAndDescription>
-          {numberOfStars ? <Stars number={numberOfStars} /> : null}
-          {descriptionText && <StyledSubDescription>{descriptionText}</StyledSubDescription>}
-        </StyledWrapStarsAndDescription>
-      ) : null}
-    </div>
+  <StyledVerticalCard tabIndex={0}>
+    <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} />
+    <StyledDescriptionArea>
+      <StyledLabel tabIndex={0}>{cardLabel}</StyledLabel>
+      <StyledTitle tabIndex={0}>{cardTitle}</StyledTitle>
+      <StyledWrapHighLight>
+        <StyledHighLight tabIndex={0}>{setCommasIfNumber(highLight)}</StyledHighLight>
+        <StyledCrossOut tabIndex={0}>{setCommasIfNumber(crossOut)}</StyledCrossOut>
+      </StyledWrapHighLight>
+    </StyledDescriptionArea>
+    {numberOfStars || descriptionText ? (
+      <StyledWrapStarsAndDescription>
+        {numberOfStars ? <Stars number={numberOfStars} tabIndex={0} /> : null}
+        {descriptionText && <StyledSubDescription tabIndex={0}>{descriptionText}</StyledSubDescription>}
+      </StyledWrapStarsAndDescription>
+    ) : null}
   </StyledVerticalCard>
 );
 

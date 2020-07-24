@@ -12,6 +12,7 @@ export interface FakeAPIResponseProps {
   imgURL: string;
   type: string;
   numberOfStars: number;
+  url: string;
   cardLabel?: string;
   cardTitle: string;
   highLight?: string | number;
@@ -30,7 +31,8 @@ export interface CustomInputTypesProps extends Omit<TextareaHTMLAttributes<HTMLI
 }
 
 export interface StarsProps {
-  number: number | undefined;
+  number?: number;
+  tabIndex?: number;
 }
 
 export interface StyledThumbnailProps {

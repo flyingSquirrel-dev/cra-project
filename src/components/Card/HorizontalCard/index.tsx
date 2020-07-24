@@ -12,19 +12,26 @@ import {
 import { FakeAPIResponseProps } from '../../../interfaces';
 import Stars from '../../Stars';
 
-const HorizontalCard: FC<FakeAPIResponseProps> = ({ imgURL, numberOfStars, cardTitle, descriptionText, author }) => {
+const HorizontalCard: FC<FakeAPIResponseProps> = ({
+  imgURL,
+  numberOfStars,
+  url,
+  cardTitle,
+  descriptionText,
+  author,
+}) => {
   return (
-    <StyledHorizonCard>
+    <StyledHorizonCard tabIndex={0}>
       <StyledWrapThumbnail>
-        <StyledThumbnail thumbnail={imgURL} />
+        <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} />
       </StyledWrapThumbnail>
       <StyledContentArea>
-        <StyledTitle>{cardTitle}</StyledTitle>
-        <StyledDescription>{descriptionText}</StyledDescription>
+        <StyledTitle tabIndex={0}>{cardTitle}</StyledTitle>
+        <StyledDescription tabIndex={0}>{descriptionText}</StyledDescription>
         {numberOfStars || descriptionText ? (
           <StyledWrapStarsAndAuthor>
-            {numberOfStars ? <Stars number={numberOfStars} /> : null}
-            {author && <StyledAuthor>{author}</StyledAuthor>}
+            {numberOfStars ? <Stars tabIndex={0} number={numberOfStars} /> : null}
+            {author && <StyledAuthor tabIndex={0}>{author}</StyledAuthor>}
           </StyledWrapStarsAndAuthor>
         ) : null}
       </StyledContentArea>
