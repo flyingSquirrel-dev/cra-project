@@ -23,7 +23,7 @@ const HorizontalCard: FC<FakeAPIResponseProps> = ({
   return (
     <StyledHorizonCard tabIndex={0}>
       <StyledWrapThumbnail>
-        <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} />
+        <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} aria-label={cardTitle} />
       </StyledWrapThumbnail>
       <StyledContentArea>
         <StyledTitle tabIndex={0}>{cardTitle}</StyledTitle>

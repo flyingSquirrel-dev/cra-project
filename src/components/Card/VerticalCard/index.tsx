@@ -26,7 +26,7 @@ const VerticalCard: FC<FakeAPIResponseProps> = ({
   descriptionText,
 }) => (
   <StyledVerticalCard tabIndex={0}>
-    <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} />
+    <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} aria-label={cardTitle} />
     <StyledDescriptionArea>
       <StyledLabel tabIndex={0}>{cardLabel}</StyledLabel>
       <StyledTitle tabIndex={0}>{cardTitle}</StyledTitle>
