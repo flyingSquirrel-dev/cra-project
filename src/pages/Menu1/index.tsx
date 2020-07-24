@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import VerticalCard from '../../components/Card/VerticalCard';
 import HorizontalCard from '../../components/Card/HorizontalCard';
-import { PageWrapHomeWork1 } from './styled';
+import { PageWrapMenu1 } from './styled';
 import { fakeAPIResponse } from '../../misc';
 import { CardTypes } from '../../enums';
 
-const Menu1: React.FC = () => (
-  <PageWrapHomeWork1>
+const Menu1: FC = () => (
+  <PageWrapMenu1>
     {fakeAPIResponse.map((payload, index) => {
       if (payload.type.toUpperCase() === CardTypes.VERTICAL) {
         return (
@@ -35,7 +35,7 @@ const Menu1: React.FC = () => (
         />
       );
     })}
-  </PageWrapHomeWork1>
+  </PageWrapMenu1>
 );
 
 export default Menu1;

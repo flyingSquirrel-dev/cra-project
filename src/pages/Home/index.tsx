@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { BaseWrap } from '../styled';
 
-const Home: React.FC = () => <BaseWrap>HOME</BaseWrap>;
+const Home: FC = () => <BaseWrap>HOME</BaseWrap>;
 
 export default Home;

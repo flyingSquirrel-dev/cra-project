@@ -5,12 +5,14 @@ export const StyledHorizonCard = styled.li`
   position: relative;
   display: inline-block;
   width: 30%;
+  margin: 0.6em 0 0 0.6em;
   text-align: left;
   vertical-align: top;
   border-radius: 0.3em;
 
   @media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
     width: 100%;
+    margin: 0;
   }
 
   @media (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {

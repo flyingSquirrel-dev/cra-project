@@ -9,10 +9,10 @@ import {
   StyledDescription,
   StyledAuthor,
 } from './styled';
-import { fakeAPIResponseProps } from '../../../interfaces';
+import { FakeAPIResponseProps } from '../../../interfaces';
 import Stars from '../../Stars';
 
-const HorizontalCard: FC<fakeAPIResponseProps> = ({ imgURL, numberOfStars, cardTitle, descriptionText, author }) => {
+const HorizontalCard: FC<FakeAPIResponseProps> = ({ imgURL, numberOfStars, cardTitle, descriptionText, author }) => {
   return (
     <StyledHorizonCard>
       <StyledWrapThumbnail>

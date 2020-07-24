@@ -1,3 +1,6 @@
+import React, { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import CustomInput from '../components/CustomTextArea';
+
 export interface RoutesProps {
   path: string;
   component: React.FC;
@@ -5,7 +8,7 @@ export interface RoutesProps {
   exact?: boolean;
 }
 
-export interface fakeAPIResponseProps {
+export interface FakeAPIResponseProps {
   imgURL: string;
   type: string;
   numberOfStars: number;
@@ -15,6 +18,15 @@ export interface fakeAPIResponseProps {
   crossOut?: string | number;
   descriptionText?: string;
   author?: string;
+}
+
+export interface CustomInputTypesProps extends Omit<TextareaHTMLAttributes<HTMLInputElement>, 'placeholder'> {
+  isDisable: boolean;
+  isReadOnly: boolean;
+  isButtonNecessary: boolean;
+  maxTextLength: number;
+  buttonCtx?: string;
+  placeholder?: string;
 }
 
 export interface StarsProps {
@@ -31,4 +43,8 @@ export interface StyledThumbnailProps {
 
 export interface StyledStarsProps {
   color: string;
+}
+
+export interface StyledButtonProps {
+  isButtonActive: boolean;
 }

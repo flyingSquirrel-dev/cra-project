@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { StyledLoading } from './styled';
 
-const Loading: React.FC = () => <StyledLoading>loading...</StyledLoading>;
+const Loading: FC = () => <StyledLoading>loading...</StyledLoading>;
 
 export default Loading;

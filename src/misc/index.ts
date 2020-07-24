@@ -1,6 +1,6 @@
-import { fakeAPIResponseProps } from '../interfaces';
+import { CustomInputTypesProps, FakeAPIResponseProps } from '../interfaces';
 
-export const fakeAPIResponse: fakeAPIResponseProps[] = [
+export const fakeAPIResponse: FakeAPIResponseProps[] = [
   {
     imgURL: 'https://hackercdn.hackerztrickz.com/wp-content/uploads/2019/06/mario_PNG59-821x1024.png',
     type: 'vertical',
@@ -38,5 +38,30 @@ export const fakeAPIResponse: fakeAPIResponseProps[] = [
     descriptionText:
       '몸길이 12-13cm, 꼬리길이 11-12cm이며, 머리는 둥글고 꼬리에 긴 털이 술 모양으로 났다. 눈은 둥글고 크다. 몸통의 양 옆으로 늘어진 비막이 앞다리에서 뒷다리까지 이어져 있어 다리를 뻗치면 막이 퍼져 마치 날개 같다. ',
     author: '박지혜',
+  },
+];
+
+export const customInputTypes: CustomInputTypesProps[] = [
+  {
+    isDisable: false,
+    isReadOnly: false,
+    isButtonNecessary: true,
+    buttonCtx: 'Save',
+    maxTextLength: 500,
+    placeholder: '초기값이 입력되어 있습니다.',
+  },
+  {
+    isDisable: true,
+    isReadOnly: false,
+    isButtonNecessary: false,
+    maxTextLength: 400,
+    placeholder: '비활성화 상태입니다.',
+  },
+  {
+    isDisable: false,
+    isReadOnly: true,
+    isButtonNecessary: false,
+    maxTextLength: 300,
+    placeholder: '읽기 전용 상태입니다.',
   },
 ];
