@@ -2,7 +2,8 @@ import { CustomInputTypesProps, FakeAPIResponseProps } from '../interfaces';
 
 export const fakeAPIResponse: FakeAPIResponseProps[] = [
   {
-    imgURL: 'https://hackercdn.hackerztrickz.com/wp-content/uploads/2019/06/mario_PNG59-821x1024.png',
+    imgURL:
+      'https://images.unsplash.com/photo-1553481187-be93c21490a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80',
     type: 'vertical',
     numberOfStars: 3,
     cardLabel: '아케이드',

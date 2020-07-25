@@ -18,6 +18,7 @@ export const StyledWrapCustomTextArea = styled.div`
 export const StyledCustomTextArea = styled.div`
   position: relative;
   width: 100%;
+  flex: 1 1 100%;
   border: 1px solid #c0c0c0;
   border-radius: 0.3em;
   overflow: hidden;

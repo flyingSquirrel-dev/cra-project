@@ -26,14 +26,34 @@ export const StyledWrapThumbnail = styled.div`
 `;
 
 export const StyledThumbnail = styled.a<StyledThumbnailProps>`
+  position: relative;
   display: block;
-  background: url("${(props) => props.thumbnail}") no-repeat;
-  background-size: cover;
-  background-position: center center;
   width: 100%;
   padding-top: 100%;
   border: 1px solid #eee;
   overflow: hidden;
+  
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5e5;
+  }
+  
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: url("${(props) => props.thumbnail}") no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 `;
 
 export const StyledContentArea = styled.div`
