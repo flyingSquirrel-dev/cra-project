@@ -6,34 +6,47 @@ import { fakeAPIResponse } from '../../misc';
 import { CardTypes } from '../../enums';
 
 const Menu1: FC = () => (
-  <PageWrapMenu1 tabIndex={0}>
+  <PageWrapMenu1>
     {fakeAPIResponse.map((payload, index) => {
-      if (payload.type.toUpperCase() === CardTypes.VERTICAL) {
+      const {
+        type,
+        url,
+        imgURL,
+        numberOfStars,
+        cardLabel,
+        cardTitle,
+        highLight,
+        crossOut,
+        descriptionText,
+        author,
+      } = payload;
+
+      if (type.toUpperCase() === CardTypes.VERTICAL) {
         return (
           <VerticalCard
             key={`verticalCard-${index}`}
-            type={payload.type}
-            url={payload.url}
-            imgURL={payload.imgURL}
-            numberOfStars={Math.floor(payload.numberOfStars)}
-            cardLabel={payload.cardLabel}
-            cardTitle={payload.cardTitle}
-            highLight={payload.highLight}
-            crossOut={payload.crossOut}
-            descriptionText={payload.descriptionText}
+            type={type}
+            url={url}
+            imgURL={imgURL}
+            numberOfStars={Math.floor(numberOfStars)}
+            cardLabel={cardLabel}
+            cardTitle={cardTitle}
+            highLight={highLight}
+            crossOut={crossOut}
+            descriptionText={descriptionText}
           />
         );
       }
       return (
         <HorizontalCard
           key={`horizonCard-${index}`}
-          type={payload.type}
-          url={payload.url}
-          imgURL={payload.imgURL}
-          numberOfStars={Math.floor(payload.numberOfStars)}
-          cardTitle={payload.cardTitle}
-          descriptionText={payload.descriptionText}
-          author={payload.author}
+          type={type}
+          url={url}
+          imgURL={imgURL}
+          numberOfStars={Math.floor(numberOfStars)}
+          cardTitle={cardTitle}
+          descriptionText={descriptionText}
+          author={author}
         />
       );
     })}

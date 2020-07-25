@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 
 import { RoutesProps } from '../../interfaces';
+import NotFound from '../../pages/NotFound';
 
 const Home = lazy(() => import('../../pages/Home'));
 const Menu1 = lazy(() => import('../../pages/Menu1'));
@@ -12,18 +13,27 @@ const Routes: RoutesProps[] = [
     name: 'HOME',
     component: Home,
     exact: true,
+    isVisible: true,
   },
   {
     path: '/menu1',
     name: 'MENU1',
     component: Menu1,
     exact: true,
+    isVisible: true,
   },
   {
     path: '/menu2',
     name: 'MENU2',
     component: Menu2,
     exact: true,
+    isVisible: true,
+  },
+  {
+    path: '/notfound',
+    name: 'NOTFOUND',
+    component: NotFound,
+    isVisible: false,
   },
 ];
 

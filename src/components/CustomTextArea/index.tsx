@@ -10,11 +10,13 @@ const CustomTextArea: FC<CustomInputTypesProps> = React.memo(
     const [remainContextLength, setRemainContextLength] = useState<number>(0);
 
     useEffect(() => {
-      if ((context?.length || 0) > maxTextLength) {
+      const contextLength = context?.length || 0;
+      if (contextLength > maxTextLength) {
         alert(`최대 ${maxTextLength}자 까지만 입력할 수 있습니다.`);
       }
-      setButtonActivity(placeholder !== context && (context?.length || 0) <= maxTextLength);
-      setRemainContextLength(maxTextLength - (context?.length || 0));
+      setButtonActivity(placeholder !== context && contextLength <= maxTextLength);
+      setRemainContextLength(maxTextLength - contextLength);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [context]);
 
     const handleSubmit = () => alert('저장했습니다.');

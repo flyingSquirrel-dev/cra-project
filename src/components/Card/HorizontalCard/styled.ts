@@ -5,7 +5,7 @@ export const StyledHorizonCard = styled.li`
   position: relative;
   display: inline-block;
   width: 30%;
-  margin: 0.6em 0 0 0.6em;
+  margin: 0.6rem 0 0 0.6rem;
   text-align: left;
   vertical-align: top;
   border-radius: 0.3em;
@@ -16,7 +16,7 @@ export const StyledHorizonCard = styled.li`
   }
 
   @media (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
-    width: 50%;
+    width: 93%;
   }
 `;
 
@@ -65,32 +65,32 @@ export const StyledContentArea = styled.div`
   right: 0;
   width: 65%;
   height: 100%;
-  padding: 1em;
+  padding: 1rem;
   box-sizing: border-box;
   border: 1px solid #eee;
   border-left: none;
 
   @media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
-    padding: 0.7em 0.8em;
+    padding: 0.7rem 0.8rem;
   }
 `;
 
 export const StyledTitle = styled.div`
   width: 100%;
-  min-height: 1em;
+  min-height: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 0.1em 0;
+  padding: 0.1rem 0;
   font-weight: bold;
 
   @media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
-    padding: 0.2em 0;
+    padding: 0.2rem 0;
   }
 `;
 
 export const StyledDescription = styled.div`
-  height: 2.2em;
+  height: 2.4rem;
   line-height: 1.2;
   word-break: break-all;
   word-wrap: break-word;
@@ -108,8 +108,8 @@ export const StyledWrapStarsAndAuthor = styled.div`
 `;
 
 export const StyledAuthor = styled.div`
-  margin-left: 0.5em;
-  padding-left: 0.5em;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
   border-left: 2px solid #eee;
   color: #939393;
 `;

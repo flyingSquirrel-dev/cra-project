@@ -1,12 +1,11 @@
 import React, { Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import GlobalStyled from './styled';
 
 import Loading from './Loading';
 import Routes from './Routes';
 
-import NotFound from '../pages/NotFound';
 import Header from './Header';
 
 const App = () => {
@@ -15,10 +14,11 @@ const App = () => {
       <Suspense fallback={<Loading />}>
         <Header />
         <Switch>
-          {Routes.map((route) => (
-            <Route key={route.name} exact={route.exact} path={route.path} component={route.component} />
-          ))}
-          <Route component={NotFound} />
+          {Routes.map((route) => {
+            const { name, exact, path, component } = route;
+            return <Route key={name} exact={exact} path={path} component={component} />;
+          })}
+          <Redirect to="/notfound" />
         </Switch>
       </Suspense>
       <GlobalStyled />

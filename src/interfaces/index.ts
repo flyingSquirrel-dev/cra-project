@@ -4,6 +4,7 @@ export interface RoutesProps {
   path: string;
   component: React.FC;
   name: string;
+  isVisible: boolean;
   exact?: boolean;
 }
 
@@ -32,10 +33,6 @@ export interface CustomInputTypesProps extends Omit<TextareaHTMLAttributes<HTMLI
 export interface StarsProps {
   number?: number;
   tabIndex?: number;
-}
-
-export interface StyledThumbnailProps {
-  thumbnail: string;
 }
 
 export interface StyledThumbnailProps {

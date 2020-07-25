@@ -8,7 +8,7 @@ export const StyledWrapSars = styled.div`
 `;
 
 export const StyledStars = styled.i<StyledStarsProps>`
-  font-size: 1.3em;
+  font-size: 20px;
   color: ${(props) => props.color};
 
   &:before {

@@ -3,7 +3,7 @@ import { defaultCoral } from '../../baseStyled';
 
 export const StyledHeader = styled.nav`
   height: 100%;
-  padding: 1em 0;
+  padding: 1rem 0;
   background: ${defaultCoral};
   font-weight: bold;
   color: #fff;
@@ -14,7 +14,7 @@ export const StyledHeader = styled.nav`
     align-items: center;
 
     li {
-      margin: 0 1em;
+      margin: 0 1rem;
     }
   }
 `;

@@ -76,3 +76,5 @@ export const DISABLE_TEXTAREA = '비활성된 영역으로 텍스트를 입력�
 export const READONLY_TEXTAREA = '읽기 전용 영역으로  텍스트를 입력할 수 없는 영역입니다.';
 
 export const AVAILABLE_TEXTAREA = '텍스트를 입력할 수 있는 영역입니다.';
+
+export const getTextForStars = (stars: number | undefined) => `별점 ${stars || 0}개`;
