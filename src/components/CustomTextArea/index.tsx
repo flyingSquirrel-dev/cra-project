@@ -17,9 +17,7 @@ const CustomTextArea: FC<CustomInputTypesProps> = React.memo(
       setRemainContextLength(maxTextLength - (context?.length || 0));
     }, [context]);
 
-    const handleSubmit = (): void => {
-      return alert('저장했습니다.');
-    };
+    const handleSubmit = () => alert('저장했습니다.');
 
     return (
       <StyledWrapCustomTextArea tabIndex={0}>

@@ -18,11 +18,18 @@ export const StyledWrapCustomTextArea = styled.div`
 export const StyledCustomTextArea = styled.div`
   position: relative;
   width: 100%;
+  border: 1px solid #c0c0c0;
+  border-radius: 0.3em;
+  overflow: hidden;
   textarea {
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 0.3em;
+    width: calc(100% + 20px);
+    height: 100%;
+    padding: 0.5em 4em 0.5em 0.5em;
+    border: none;
     resize: none;
+    &:focus {
+      outline: none;
+    }
     &:disabled {
       color: #cfcfcf;
     }
@@ -40,7 +47,7 @@ export const StyledCustomTextArea = styled.div`
 
 export const StyledButton = styled.button<StyledButtonProps>`
   width: 8em;
-  margin-left: 1em;
+  margin-left: 0.5em;
   background: ${(props) => (props.isButtonActive ? defaultCoral : '#eee')};
   color: #fff;
   border: none;

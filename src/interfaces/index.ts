@@ -1,5 +1,4 @@
-import React, { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
-import CustomInput from '../components/CustomTextArea';
+import React, { TextareaHTMLAttributes } from 'react';
 
 export interface RoutesProps {
   path: string;
