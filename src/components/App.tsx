@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch, BrowserRouter } from 'react-router-dom';
 
 import GlobalStyled from './styled';
 
@@ -10,19 +10,19 @@ import Header from './Header';
 
 const App = () => {
   return (
-    <>
-      <Suspense fallback={<Loading />}>
-        <Header />
-        <Switch>
+    <BrowserRouter>
+      <Switch>
+        <Suspense fallback={<Loading />}>
+          <Header />
           {Routes.map((route) => {
             const { name, exact, path, component } = route;
             return <Route key={name} exact={exact} path={path} component={component} />;
           })}
           <Redirect to="/notfound" />
-        </Switch>
-      </Suspense>
+        </Suspense>
+      </Switch>
       <GlobalStyled />
-    </>
+    </BrowserRouter>
   );
 };
 
