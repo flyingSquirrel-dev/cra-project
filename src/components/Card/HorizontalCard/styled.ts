@@ -57,6 +57,7 @@ export const StyledContentArea = styled.div`
 
 export const StyledTitle = styled.div`
   width: 100%;
+  min-height: 1em;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -69,6 +70,7 @@ export const StyledTitle = styled.div`
 `;
 
 export const StyledDescription = styled.div`
+  height: 2.2em;
   line-height: 1.2;
   word-break: break-all;
   word-wrap: break-word;

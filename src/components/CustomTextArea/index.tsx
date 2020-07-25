@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { CustomInputTypesProps } from '../../interfaces';
 import { StyledButton, StyledCustomTextArea, StyledWrapCustomTextArea } from './styled';
 import { AVAILABLE_TEXTAREA, DISABLE_TEXTAREA, READONLY_TEXTAREA } from '../../misc';
@@ -15,7 +15,7 @@ const CustomTextArea: FC<CustomInputTypesProps> = React.memo(
       }
       setButtonActivity(placeholder !== context && (context?.length || 0) <= maxTextLength);
       setRemainContextLength(maxTextLength - (context?.length || 0));
-    }, [context, placeholder]);
+    }, [context]);
 
     const handleSubmit = (): void => {
       return alert('저장했습니다.');
