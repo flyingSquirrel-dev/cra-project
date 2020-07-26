@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import VerticalCard from '../../components/Card/VerticalCard';
 import HorizontalCard from '../../components/Card/HorizontalCard';
-import { PageWrapMenu1 } from './styled';
+import { StyledWrapMenu1 } from './styled';
 import { fakeAPIResponse } from '../../misc';
 import { CardTypes } from '../../enums';
 
 const Menu1: FC = () => (
-  <PageWrapMenu1>
+  <StyledWrapMenu1 data-testid="menu1-wrapper">
     {fakeAPIResponse.map((payload, index) => {
       const {
         type,
@@ -50,7 +50,7 @@ const Menu1: FC = () => (
         />
       );
     })}
-  </PageWrapMenu1>
+  </StyledWrapMenu1>
 );
 
 export default Menu1;

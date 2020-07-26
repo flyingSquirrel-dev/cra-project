@@ -8,6 +8,7 @@ const CustomTextArea: FC<CustomInputTypesProps> = React.memo(
     const [context, setContext] = useState<string | undefined>(placeholder);
     const [isButtonActive, setButtonActivity] = useState<boolean>(false);
     const [remainContextLength, setRemainContextLength] = useState<number>(0);
+    const [isSaveSuccess, setSaveStatus] = useState<boolean>(false);
 
     useEffect(() => {
       const contextLength = context?.length || 0;
@@ -19,7 +20,10 @@ const CustomTextArea: FC<CustomInputTypesProps> = React.memo(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [context]);
 
-    const handleSubmit = () => alert('저장했습니다.');
+    const handleSubmit = () => {
+      setSaveStatus(true);
+      return alert('저장했습니다.');
+    };
 
     return (
       <StyledWrapCustomTextArea tabIndex={0}>
@@ -35,20 +39,26 @@ const CustomTextArea: FC<CustomInputTypesProps> = React.memo(
             onChange={(e) => setContext(e.target.value)}
             tabIndex={0}
             aria-label={isDisable ? DISABLE_TEXTAREA : isReadOnly ? READONLY_TEXTAREA : AVAILABLE_TEXTAREA}
+            data-testid="textarea"
           />
           <span tabIndex={-1} aria-label={`현재 입력 가능한 남은 글자 수는 ${remainContextLength}자 입니다.`}>
             {remainContextLength}
           </span>
         </StyledCustomTextArea>
         {isButtonNecessary && (
-          <StyledButton
-            isButtonActive={isButtonActive}
-            disabled={!isButtonActive}
-            onClick={handleSubmit}
-            aria-label={buttonCtx}
-          >
-            {buttonCtx}
-          </StyledButton>
+          <>
+            <StyledButton
+              isButtonActive={isButtonActive}
+              disabled={!isButtonActive}
+              onClick={handleSubmit}
+              aria-label={buttonCtx}
+              data-testid="CustomTextArea-button"
+            >
+              {buttonCtx}
+            </StyledButton>
+            {/*  for testing */}
+            <input data-testid="resultOfSave" type="hidden" value={JSON.stringify(isSaveSuccess)} />
+          </>
         )}
       </StyledWrapCustomTextArea>
     );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PageWrapMenu1 = styled.ul`
+export const StyledWrapMenu1 = styled.ul`
   width: 100%;
   text-align: center;
 

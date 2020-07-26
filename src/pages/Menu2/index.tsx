@@ -4,7 +4,7 @@ import { customInputTypes } from '../../misc';
 import { StyledWrapMenu2 } from './styled';
 
 const Menu2: FC = () => (
-  <StyledWrapMenu2>
+  <StyledWrapMenu2 data-testid="menu2-wrapper">
     {customInputTypes.map((elem, index) => (
       <CustomTextArea
         key={`customInput-${index}`}

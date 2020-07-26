@@ -6,7 +6,7 @@ import { StyledHeader } from './styled';
 
 const Header: FC = () => {
   return (
-    <StyledHeader>
+    <StyledHeader data-testid="navbar">
       <ol>
         {Routes.map((route) => {
           const { name, path, isVisible } = route;
@@ -14,7 +14,9 @@ const Header: FC = () => {
           return (
             isVisible && (
               <li key={`nav-${name}`}>
-                <Link to={path}>{name}</Link>
+                <Link data-testid={name} to={path}>
+                  {name}
+                </Link>
               </li>
             )
           );

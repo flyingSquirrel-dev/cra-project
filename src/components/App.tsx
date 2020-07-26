@@ -8,22 +8,20 @@ import Routes from './Routes';
 
 import Header from './Header';
 
-const App = () => {
-  return (
-    <BrowserRouter>
+const App = () => (
+  <BrowserRouter>
+    <Suspense fallback={<Loading />}>
+      <Header />
       <Switch>
-        <Suspense fallback={<Loading />}>
-          <Header />
-          {Routes.map((route) => {
-            const { name, exact, path, component } = route;
-            return <Route key={name} exact={exact} path={path} component={component} />;
-          })}
-          <Redirect to="/notfound" />
-        </Suspense>
+        {Routes.map((route) => {
+          const { name, exact, path, component } = route;
+          return <Route key={name} exact={exact} path={path} component={component} />;
+        })}
+        <Redirect to="/notfound" />
       </Switch>
-      <GlobalStyled />
-    </BrowserRouter>
-  );
-};
+    </Suspense>
+    <GlobalStyled />
+  </BrowserRouter>
+);
 
 export default App;
