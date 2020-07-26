@@ -25,7 +25,7 @@ const VerticalCard: FC<FakeAPIResponseProps> = ({
   crossOut,
   descriptionText,
 }) => (
-  <StyledVerticalCard tabIndex={0}>
+  <StyledVerticalCard tabIndex={0} data-testid="VerticalCard">
     <StyledThumbnail href={url} thumbnail={imgURL} tabIndex={0} aria-label={cardTitle} />
     <StyledDescriptionArea>
       <StyledLabel tabIndex={0}>{cardLabel}</StyledLabel>
@@ -36,9 +36,13 @@ const VerticalCard: FC<FakeAPIResponseProps> = ({
       </StyledWrapHighLight>
     </StyledDescriptionArea>
     {numberOfStars || descriptionText ? (
-      <StyledWrapStarsAndDescription>
+      <StyledWrapStarsAndDescription data-testid="StarsAndDescriptionWrapper">
         {numberOfStars ? <Stars number={numberOfStars} tabIndex={0} /> : null}
-        {descriptionText && <StyledSubDescription tabIndex={0}>{descriptionText}</StyledSubDescription>}
+        {descriptionText && (
+          <StyledSubDescription tabIndex={0} data-testid="SubDescription">
+            {descriptionText}
+          </StyledSubDescription>
+        )}
       </StyledWrapStarsAndDescription>
     ) : null}
   </StyledVerticalCard>
